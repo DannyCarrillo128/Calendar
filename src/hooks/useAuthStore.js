@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { calendarApi } from '../api';
-import { clearErrorMessage, onChecking, onLogin, onLogout, onLogoutCalendar } from '../store';
+import { onClearErrorMessage, onChecking, onLogin, onLogout, onLogoutCalendar } from '../store';
 
 export const useAuthStore = () => {
 
@@ -23,7 +23,7 @@ export const useAuthStore = () => {
       dispatch(onLogout('Invalid credentials.'));
       
       setTimeout(() => {
-        dispatch(clearErrorMessage());
+        dispatch(onClearErrorMessage());
       }, 10);
     }
   };
@@ -50,7 +50,7 @@ export const useAuthStore = () => {
       }
 
       setTimeout(() => {
-        dispatch(clearErrorMessage());
+        dispatch(onClearErrorMessage());
       }, 10);
     }
 
